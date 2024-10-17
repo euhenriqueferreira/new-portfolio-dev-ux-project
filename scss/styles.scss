@@ -2,17 +2,20 @@
 
 // Color Variables
 $black: #000000;
-$font-highlight-color: #555555;
+$font-highlight-color: #aaaaaa;
 $gray: #333;
 $lightgray: #d9d9d9;
 $white: #ffffff;
 
 body{
+    overflow-x: hidden;
     touch-action: manipulation;
 }
 
 // Header
 header{
+    max-width: 1440px;
+    margin:  0 auto;
     $header-padding-top: 40px;
     $menu-wrapper-height: 45px;
     width: 100%;
@@ -178,6 +181,60 @@ section.presentation-video{
     right: 10px;
 }
 
+// About Me
+section.about-me{
+    width: 100%;
+    height: fit-content;
+    padding: 0px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    .line-content-wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0 120px;
+        &__image{    
+            img{
+                width: 330px;
+                height: 330px;
+            }
+        }
+
+        &__text{
+            max-width: 750px;
+            p{
+                font-size: 2.8rem;
+                line-height: 1.3em;
+                color: $black;
+                @extend %regular-font;
+                margin-bottom: 1.2em;
+                span{
+                    font-size: inherit;
+                    color: $font-highlight-color;
+                }
+            }
+        }
+
+    }
+
+    .line-content-wrapper:nth-of-type(2n){
+        flex-direction: row-reverse;
+
+        .line-content-wrapper__text{
+            p{
+                text-align: right;
+            }
+        }
+    }
+}
+
 /* --------------------------------------------- */ 
 /* --- Media Queries (Responsive Breakpoints --- */ 
 /* --------------------------------------------- */ 
@@ -210,8 +267,54 @@ section.presentation-video{
             margin-top: calc(($header-padding-top  + $menu-wrapper-height - 10px) * -1);
         }
     }
+
+    // About Me
+    section.about-me{
+        gap: 40px 0;
+
+        .line-content-wrapper{
+            gap: 0 80px;
+            &__image{    
+                img{
+                    width: 315px;
+                    height: 315px;
+                }
+            }
+
+            &__text{
+                p{
+                    font-size: 2.6rem;
+                }
+            }
+
+        }
+    }
 }
 
+@media screen and (max-width: 1199px){
+    // About Me
+    section.about-me{
+        padding: 0px 40px;
+        gap: 25px 0;
+
+        .line-content-wrapper{
+            gap: 0 55px;
+            &__image{    
+                img{
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+
+            &__text{
+                p{
+                    font-size: 2.4rem;
+                }
+            }
+
+        }
+    }
+}
 
 @media screen and (max-width: 991px){
     // Header
@@ -247,6 +350,28 @@ section.presentation-video{
         .linkedin-anchor-wrapper{
             svg{
                 width: 55px;
+            }
+        }
+    }
+
+    // About Me
+    section.about-me{
+        padding: 0px 30px;
+
+        .line-content-wrapper{
+            gap: 0 30px;
+            &__image{    
+                img{
+                    width: 280px;
+                    height: 280px;
+                }
+            }
+
+            &__text{
+                p{
+                    font-size: 2.1rem;
+                    margin-bottom: 1em;
+                }
             }
         }
     }
@@ -290,6 +415,40 @@ section.presentation-video{
         .linkedin-anchor-wrapper{
             svg{
                 width: 55px;
+            }
+        }
+    }
+
+    // About Me
+    section.about-me{
+        margin-top: 20px;
+        gap: 40px 0;
+
+        .line-content-wrapper{
+            flex-direction: column;
+            gap: 20px 0;
+            &__image{    
+                img{
+                    width: 260px;
+                    height: 260px;
+                }
+            }
+
+            &__text{
+                p{
+                    text-align: center;
+                    font-size: 2rem;
+                }
+            }
+
+        }
+
+        .line-content-wrapper:nth-of-type(2n){
+            flex-direction: column;
+            .line-content-wrapper__text{
+                p{
+                    text-align: center;
+                }
             }
         }
     }
@@ -341,6 +500,29 @@ section.presentation-video{
     // Modal Menu Mobile
     .modal-menu-mobile{
         display: flex;
+    }
+
+    // About Me
+    section.about-me{
+        padding: 0px 20px;
+        gap: 25px 0;
+
+        .line-content-wrapper{
+            gap: 12px 0;
+            &__image{    
+                img{
+                    width: 230px;
+                    height: 230px;
+                }
+            }
+
+            &__text{
+                p{
+                    font-size: 1.7rem;
+                }
+            }
+
+        }
     }
 
 }

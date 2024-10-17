@@ -5,3 +5,5 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="./css/styles.css">
+
+<link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">

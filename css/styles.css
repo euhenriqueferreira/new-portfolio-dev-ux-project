@@ -32,7 +32,7 @@ html {
   font-style: normal;
 }
 
-header .dynamic-menu-wrapper__menu ul.anchor-list li.anchor-list__item a.anchor, .modal-menu-mobile .anchor-list-mobile__item a {
+header .dynamic-menu-wrapper__menu ul.anchor-list li.anchor-list__item a.anchor, .modal-menu-mobile .anchor-list-mobile__item a, section.about-me .line-content-wrapper__text p {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
@@ -40,10 +40,13 @@ header .dynamic-menu-wrapper__menu ul.anchor-list li.anchor-list__item a.anchor,
 }
 
 body {
+  overflow-x: hidden;
   touch-action: manipulation;
 }
 
 header {
+  max-width: 1440px;
+  margin: 0 auto;
   width: 100%;
   height: fit-content;
   padding: 40px 50px 25px 50px;
@@ -185,6 +188,49 @@ section.presentation-video .video-desktop {
   right: 10px;
 }
 
+section.about-me {
+  width: 100%;
+  height: fit-content;
+  padding: 0px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+section.about-me .line-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0 120px;
+}
+section.about-me .line-content-wrapper__image img {
+  width: 330px;
+  height: 330px;
+}
+section.about-me .line-content-wrapper__text {
+  max-width: 750px;
+}
+section.about-me .line-content-wrapper__text p {
+  font-size: 2.8rem;
+  line-height: 1.3em;
+  color: #000000;
+  margin-bottom: 1.2em;
+}
+section.about-me .line-content-wrapper__text p span {
+  font-size: inherit;
+  color: #aaaaaa;
+}
+section.about-me .line-content-wrapper:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+section.about-me .line-content-wrapper:nth-of-type(2n) .line-content-wrapper__text p {
+  text-align: right;
+}
+
 /* --------------------------------------------- */
 /* --- Media Queries (Responsive Breakpoints --- */
 /* --------------------------------------------- */
@@ -200,6 +246,35 @@ section.presentation-video .video-desktop {
   }
   header .menu-visible {
     margin-top: -75px;
+  }
+  section.about-me {
+    gap: 40px 0;
+  }
+  section.about-me .line-content-wrapper {
+    gap: 0 80px;
+  }
+  section.about-me .line-content-wrapper__image img {
+    width: 315px;
+    height: 315px;
+  }
+  section.about-me .line-content-wrapper__text p {
+    font-size: 2.6rem;
+  }
+}
+@media screen and (max-width: 1199px) {
+  section.about-me {
+    padding: 0px 40px;
+    gap: 25px 0;
+  }
+  section.about-me .line-content-wrapper {
+    gap: 0 55px;
+  }
+  section.about-me .line-content-wrapper__image img {
+    width: 300px;
+    height: 300px;
+  }
+  section.about-me .line-content-wrapper__text p {
+    font-size: 2.4rem;
   }
 }
 @media screen and (max-width: 991px) {
@@ -221,6 +296,20 @@ section.presentation-video .video-desktop {
   }
   header .linkedin-anchor-wrapper svg {
     width: 55px;
+  }
+  section.about-me {
+    padding: 0px 30px;
+  }
+  section.about-me .line-content-wrapper {
+    gap: 0 30px;
+  }
+  section.about-me .line-content-wrapper__image img {
+    width: 280px;
+    height: 280px;
+  }
+  section.about-me .line-content-wrapper__text p {
+    font-size: 2.1rem;
+    margin-bottom: 1em;
   }
 }
 @media screen and (max-width: 767px) {
@@ -249,6 +338,28 @@ section.presentation-video .video-desktop {
   }
   header .linkedin-anchor-wrapper svg {
     width: 55px;
+  }
+  section.about-me {
+    margin-top: 20px;
+    gap: 40px 0;
+  }
+  section.about-me .line-content-wrapper {
+    flex-direction: column;
+    gap: 20px 0;
+  }
+  section.about-me .line-content-wrapper__image img {
+    width: 260px;
+    height: 260px;
+  }
+  section.about-me .line-content-wrapper__text p {
+    text-align: center;
+    font-size: 2rem;
+  }
+  section.about-me .line-content-wrapper:nth-of-type(2n) {
+    flex-direction: column;
+  }
+  section.about-me .line-content-wrapper:nth-of-type(2n) .line-content-wrapper__text p {
+    text-align: center;
   }
 }
 @media screen and (max-width: 575px) {
@@ -279,6 +390,20 @@ section.presentation-video .video-desktop {
   }
   .modal-menu-mobile {
     display: flex;
+  }
+  section.about-me {
+    padding: 0px 20px;
+    gap: 25px 0;
+  }
+  section.about-me .line-content-wrapper {
+    gap: 12px 0;
+  }
+  section.about-me .line-content-wrapper__image img {
+    width: 230px;
+    height: 230px;
+  }
+  section.about-me .line-content-wrapper__text p {
+    font-size: 1.7rem;
   }
 }
 

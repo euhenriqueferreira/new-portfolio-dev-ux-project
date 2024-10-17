@@ -62,6 +62,37 @@
                 </li>
             </ul>
         </div><!-- Modal Menu Mobile -->
+
+        <section class="about-me">
+            <div class="line-content-wrapper">
+                <div class="line-content-wrapper__image">
+                    <img src="assets/quinho-photo.webp" alt="">
+                </div>
+                <div class="line-content-wrapper__text">
+                    <p>Me chamo <span>Henrique</span> e tenho <span>20 anos.</span></p>
+                    <p>Eu trabalho como <span>Desenvolvedor Web Front End</span> desde os meus 18 anos.</p>
+                    <p>Me interessei por programação desde cedo e, mais tarde, surgiu meu interesse por <span>UX Design</span>.</p>
+                </div>
+            </div>
+            <div class="line-content-wrapper">
+                <div class="line-content-wrapper__image">
+                    <img src="assets/laptop.webp" alt="">
+                </div>
+                <div class="line-content-wrapper__text">
+                    <p>Trabalhei por <span>2 anos</span> como dev Front End e <span>nunca parei de programar</span>, sempre busquei <span>aprender mais</span> e <span>aprender melhor</span>.</p>
+                    <p>Já <span>codifiquei</span> o Front End de <span>mais de 15 sites profissionais</span>, trabalhando pela empresa que me ofereceu a primeira oportunidade, chama-se Wopus.</p>
+                </div>
+            </div>
+            <div class="line-content-wrapper">
+                <div class="line-content-wrapper__image">
+                    <img src="assets/wireframes.webp" alt="">
+                </div>
+                <div class="line-content-wrapper__text">
+                    <p>Desde 2023 me interesso muito por <span>UX Design</span>. Tenho <span>lido</span> sobre isso e <span>praticado</span> as <span>melhores formas</span> de oferecer a <span>melhor experiência para o usuário</span>.</p>
+                    <p>UX Design tem sido uma área de grande enfoque em meus estudos, e <span>continuará sendo</span>.</p>
+                </div>
+            </div>
+        </section><!-- About Me -->
     </main>
 
 
