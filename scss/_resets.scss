@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+html {
+    cursor: url('../assets/cursor.svg'), auto;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
