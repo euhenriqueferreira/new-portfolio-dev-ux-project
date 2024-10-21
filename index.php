@@ -189,6 +189,15 @@
                 </div>
             </div>
         </div><!-- Modal My Cases Section -->
+
+        <section class="banners-lines">
+            <div class="line-banner-wrapper">
+                <img src="assets/notebook.webp" alt="Wireframes" title="Wireframes" class="img-banner">
+            </div>
+            <div class="line-banner-wrapper">
+                <img src="assets/code.webp" alt="Código de Programação" title="Código de Programação" class="img-banner">
+            </div>
+        </section>
     </main>
 
 

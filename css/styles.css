@@ -238,7 +238,6 @@ section.my-cases {
   width: 100%;
   margin: 0 auto;
   margin-top: 80px;
-  margin-bottom: 150px;
   max-width: 1440px;
 }
 section.my-cases .container-my-cases {
@@ -431,6 +430,34 @@ section.my-cases .button-wrapper button.btn-open-modal-cases:hover::before {
   background: #444;
 }
 
+section.banners-lines {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: 150px;
+  margin-bottom: 170px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 110px 0;
+  padding: 0 25px;
+}
+section.banners-lines .line-banner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+section.banners-lines .line-banner-wrapper img.img-banner {
+  width: min(1000px, 80%);
+  height: auto;
+  aspect-ratio: 50/17;
+  border-radius: 40px;
+  object-fit: cover;
+}
+section.banners-lines .line-banner-wrapper:nth-of-type(2) {
+  justify-content: flex-start;
+}
+
 /* --------------------------------------------- */
 /* --- Media Queries (Responsive Breakpoints --- */
 /* --------------------------------------------- */
@@ -551,6 +578,13 @@ section.my-cases .button-wrapper button.btn-open-modal-cases:hover::before {
   .modal-my-cases .modal-wrapper .modal-close-button-wrapper {
     width: 72px;
   }
+  section.banners-lines {
+    margin-top: 130px;
+    gap: 90px 0;
+  }
+  section.banners-lines .line-banner-wrapper img.img-banner {
+    aspect-ratio: 50/18;
+  }
 }
 @media screen and (max-width: 991px) {
   header .logo-wrapper img.img-logo {
@@ -631,6 +665,14 @@ section.my-cases .button-wrapper button.btn-open-modal-cases:hover::before {
   .modal-my-cases .modal-wrapper .modal-close-button-wrapper svg {
     width: 36px;
     height: 36px;
+  }
+  section.banners-lines {
+    margin-top: 115px;
+    gap: 70px 0;
+  }
+  section.banners-lines .line-banner-wrapper img.img-banner {
+    aspect-ratio: 50/20;
+    border-radius: 30px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -714,6 +756,13 @@ section.my-cases .button-wrapper button.btn-open-modal-cases:hover::before {
   .modal-my-cases .modal-wrapper .modal-container .modal-content ul.cases-list li {
     width: fit-content;
   }
+  section.banners-lines {
+    margin-top: 95px;
+    gap: 45px 0;
+  }
+  section.banners-lines .line-banner-wrapper img.img-banner {
+    width: min(540px, 100%);
+  }
 }
 @media screen and (max-width: 575px) {
   header {
@@ -792,6 +841,14 @@ section.my-cases .button-wrapper button.btn-open-modal-cases:hover::before {
   .modal-my-cases .modal-wrapper .modal-close-button-wrapper button.close-modal-btn svg {
     width: 30px;
     height: 30px;
+  }
+  section.banners-lines {
+    margin-top: 70px;
+    gap: 35px 0;
+  }
+  section.banners-lines .line-banner-wrapper img.img-banner {
+    min-height: 200px;
+    border-radius: 20px;
   }
 }
 
