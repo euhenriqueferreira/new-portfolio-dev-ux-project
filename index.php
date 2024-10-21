@@ -93,6 +93,102 @@
                 </div>
             </div>
         </section><!-- About Me -->
+
+        <section class="my-cases">
+            <div class="container-my-cases">
+                <div class="title-wrapper">
+                    <h2>Cases -</h2>
+                </div>
+                <div class="grid-cases-wrapper">
+                    <a href="https://www.donabel.com.br/" aria-label="Visitar Site" target="_blank" rel='noreferrer nofollow noopener' class="case-box">
+                        <img src="assets/case_1.webp" alt="Case Don Abel" title="Case Don Abel" class="img-case" loading="lazy">
+                        <div class="layer-blur"></div>
+                    </a>
+                    <div class="case-box case-empty"></div>
+                    <a href="https://www.allps.com.br/" aria-label="Visitar Site" target="_blank" rel='noreferrer nofollow noopener' class="case-box">
+                        <img src="assets/case_2.webp" alt="Case Allps" title="Case Allps" class="img-case" loading="lazy">
+                        <div class="layer-blur"></div>
+                    </a>
+                    <div class="case-box case-empty"></div>
+                    <div class="case-box case-empty"></div>
+                    <a href="https://www.pisani.com.br/50anos/" aria-label="Visitar Site" target="_blank" rel='noreferrer nofollow noopener' class="case-box">
+                        <img src="assets/case_3.webp" alt="Case Pisani 50 Anos" title="Case Pisani 50 Anos" class="img-case" loading="lazy">
+                        <div class="layer-blur"></div>
+                    </a>
+                    <div class="case-box case-empty"></div>
+                    <a href="https://www.brlaser.ind.br/" aria-label="Visitar Site" target="_blank" rel='noreferrer nofollow noopener' class="case-box">
+                        <img src="assets/case_4.webp" alt="Case BRLaser" title="Case BRLaser" class="img-case" loading="lazy">
+                        <div class="layer-blur"></div>
+                    </a>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn-open-modal-cases">
+                        <span>Ver todos os cases</span>
+                    </button>
+                </div>
+            </div>
+        </section><!-- My Cases -->
+
+        <div class="modal-my-cases">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <div class="title-wrapper">
+                            <h2>- Cases -</h2>
+                        </div>
+                    </div>
+                    <div class="modal-content">
+                        <ul class="cases-list">
+                            <li>
+                                <a href="https://www.donabel.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Vinícola Don abel</a>
+                            </li>
+                            <li>
+                                <a href="https://www.brlaser.ind.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">BRLaser</a>
+                            </li>
+                            <li>
+                                <a href="https://www.allps.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Allps</a>
+                            </li>
+                            <li>
+                                <a href="https://www.pisani.com.br/50anos/" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Pisani 50 anos</a>
+                            </li>
+                            <li>
+                                <a href="https://www.igorgodoytattoo.com.br/" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Igor Godoy Tattoo</a>
+                            </li>
+                            <li>
+                                <a href="https://www.expomotorhome.com" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Expo Motor Home</a>
+                            </li>
+                            <li>
+                                <a href="https://www.premiumtecnologia.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Premium Tecnologia</a>
+                            </li>
+                            <li>
+                                <a href="https://www.roboagro.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Roboagro</a>
+                            </li>
+                            <li>
+                                <a href="https://www.boscato.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Vinícola Boscato</a>
+                            </li>
+                            <li>
+                                <a href="https://www.adegaboscato.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Adega Boscato</a>
+                            </li>
+                            <li>
+                                <a href="https://www.murialdinas.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Irmãs Murialdinas</a>
+                            </li>
+                            <li>
+                                <a href="https://www.escolacozi.com.br" aria-label="Visitar Site do Case" target="_blank" rel="noreferrer nofollow noopener" class="item">Cozi Escola Culinária</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-close-button-wrapper">
+                    <button class="close-modal-btn">
+                        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.00191 9.41621C7.61138 9.02569 7.61138 8.39252 8.00191 8.002C8.39243 7.61147 9.0256 7.61147 9.41612 8.002L12.0057 10.5916L14.5896 8.00771C14.9801 7.61719 15.6133 7.61719 16.0038 8.00771C16.3943 8.39824 16.3943 9.0314 16.0038 9.42193L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.004C15.6133 16.3945 14.9802 16.3945 14.5896 16.004L12.0057 13.42L9.42192 16.0038C9.03139 16.3943 8.39823 16.3943 8.00771 16.0038C7.61718 15.6133 7.61718 14.9801 8.00771 14.5896L10.5915 12.0058L8.00191 9.41621Z" fill="#FFFFFF"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z" fill="#FFFFFF"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div><!-- Modal My Cases Section -->
     </main>
 
 

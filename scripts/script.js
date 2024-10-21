@@ -36,6 +36,30 @@ $(document).ready(function(){
         touchEndedY = event.changedTouches[0].screenY;  
         handleSwipeMenuMobile()
     })
+
+
+    // Modal Cases
+    const modalCases = $('.modal-my-cases');
+    const btnOpenModal = $('button.btn-open-modal-cases');
+    const btnCloseModal = $('button.close-modal-btn');
+
+    btnOpenModal.on('click', function(){
+        modalCases.fadeIn();
+        modalCases.css('display', 'flex');
+        unloadScrollBars();
+    })
+
+    btnCloseModal.on('click', function(){
+        modalCases.fadeOut();
+        reloadScrollBars();
+    })
+
+    body.addEventListener('click', function(event){
+        if(event.target.classList.contains('modal-my-cases')){
+            modalCases.fadeOut();
+            reloadScrollBars();
+        }
+    })
 })
 
 function handleSwipeMenuMobile(){
@@ -55,4 +79,14 @@ function handleBodyClickMenuMobile(event){
     if(!event.target.classList.contains('modal-menu-mobile') && !event.target.classList.contains('anchor-list-mobile__item')){
         menuMobileWrapper.classList.remove('modal-visible');
     }
+}
+
+function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';
+    document.body.scroll = 'no'; // IE
+}
+
+function reloadScrollBars() {
+    document.documentElement.style.overflow = 'auto';
+    document.body.scroll = 'yes'; // IE
 }

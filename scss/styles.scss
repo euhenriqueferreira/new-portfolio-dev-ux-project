@@ -9,7 +9,6 @@ $white: #ffffff;
 
 body{
     overflow-x: hidden;
-    touch-action: manipulation;
 }
 
 // Header
@@ -62,7 +61,7 @@ header{
                         font-size: 2rem;
                         line-height: 1.2em;
                         color: $white;
-                        cursor: inherit;
+                        cursor: pointer;
                         @extend %regular-font;
                         pointer-events: all;
                     }
@@ -79,7 +78,7 @@ header{
                 flex-direction: column;
                 align-items: center;
                 gap: 0;
-                cursor: inherit;
+                cursor: pointer;
                 .line-top{
                     width: 100%;
                     height: 15px;
@@ -156,6 +155,7 @@ section.presentation-video{
     backdrop-filter: blur(4px);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 
     .anchor-list-mobile{
         width: 100%;
@@ -235,9 +235,274 @@ section.about-me{
     }
 }
 
+// My Cases
+section.my-cases{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 150px;
+    max-width: 1440px;
+
+    .container-my-cases{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: min(1250px , 100%);
+        margin: 0 50px 0 auto;
+    }
+
+    .title-wrapper{
+        width: fit-content;
+        height: fit-content;
+        margin-bottom: 28px;
+
+        h2{
+            font-size: 5rem;
+            line-height: 1.2em;
+            color: $font-highlight-color;
+            font-style: italic;
+            @extend %bold-font;
+        }
+    }
+
+    .grid-cases-wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 30px;
+
+
+        .case-box{
+            width: 290px;
+            height: 200px;
+            border-radius: 25px;
+            position: relative;
+            overflow: hidden;
+
+            img.img-case{
+                width: 120%;
+                height: 120%;
+                object-fit: cover;
+                border-radius: 25px;
+                object-position: -15px -20px;
+            }
+
+            .layer-blur{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.2);
+                z-index: 2;
+                backdrop-filter: blur(5px);
+                transition: backdrop-filter .3s;
+            }
+
+            &:hover{
+                .layer-blur{
+                    backdrop-filter: blur(0px);
+                }
+            }
+        }
+
+        .case-empty:nth-of-type(1){
+            background: #d9d9d9;
+        }
+        .case-empty:nth-of-type(2){
+            background: #B1B2B5;
+        }
+        .case-empty:nth-of-type(3){
+            background: #7a7b7c;
+        }
+        .case-empty:nth-of-type(4){
+            background: #555555;
+        }
+    }
+
+    .button-wrapper{
+        width: fit-content;
+        margin: 50px auto 0 auto;
+        button.btn-open-modal-cases{
+            background: transparent;
+            border: 0;
+            padding: 10px 18px;
+            position: relative;
+            cursor: pointer;
+            
+            span{
+                font-size: 2.5rem;
+                line-height: 1.2em;
+                color: $font-highlight-color;
+                font-style: italic;
+                position: relative;
+                transition: .3s;
+                @extend %regular-font;
+            }
+
+            &::before{
+                display: block;
+                content: '';
+                width: 100%;
+                height: 4px;
+                background: $font-highlight-color;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: .3s;
+            }
+
+            &:hover{
+                span{
+                    color: $white;
+                }
+
+                &::before{
+                    height: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+// Modal My Cases
+.modal-my-cases{
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-wrapper{
+        width: min(1280px, 100%);
+        height: min(540px, 90vw);
+        border-radius: 50px;
+        background: $white;
+        display: flex;
+        overflow: hidden;
+        margin: 0 30px;
+
+        .modal-container{
+            flex: 1;
+            padding-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .modal-header{
+                margin-bottom: 45px;
+                .title-wrapper{
+                    h2{
+                        font-size: 4.8rem;
+                        line-height: 1.2em;
+                        color: $font-highlight-color;
+                        font-style: italic;
+                        @extend %bold-font;
+                    }
+                }
+            }
+
+            .modal-content{
+                width: 100%;
+                padding: 0px 40px;
+                ul.cases-list{
+                    width: 100%;
+                    columns: 2;
+                    column-gap: 100px;
+
+                    li{
+                        margin-bottom: 20px;
+                        transition: .2s;
+                        a.item{
+                            font-size: 3.2rem;
+                            line-height: 1.2em;
+                            color: $font-highlight-color;
+                            @extend %bold-font;
+                            font-style: italic;
+                            transition: .2s;
+                        
+                        }
+                        &:hover{
+                            a{
+                                color: #888;
+                            }
+                            transform: scale(1.02) translate(5px, -5px);
+                        }
+                    }
+                }
+            }
+        }
+        
+        .modal-close-button-wrapper{
+            width: 80px;
+            height: 100%;
+            background: #555;   
+            transition: .3s;
+            
+            button.close-modal-btn{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                margin: 0;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+
+                svg{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            &:hover{
+                background: #444;
+            }
+
+        }
+    }
+}
+
 /* --------------------------------------------- */ 
 /* --- Media Queries (Responsive Breakpoints --- */ 
 /* --------------------------------------------- */ 
+
+@media screen and (max-width: 1440px){
+    // My Cases
+    section.my-cases{
+
+        .container-my-cases{
+            margin: 0 40px 0 auto;
+            padding-left: 20px;
+        }
+
+        .title-wrapper{
+            h2{
+                font-size: 4.6rem;
+            }
+        }
+
+        .grid-cases-wrapper{
+            gap: 25px;
+
+
+            .case-box{
+                width: 280px;
+                height: 190px;
+            }
+        }
+    }
+
+}
+
 
 @media screen and (max-width: 1280px){
     // Header
@@ -289,6 +554,43 @@ section.about-me{
 
         }
     }
+
+     // My Cases
+     section.my-cases{
+        margin-top: 65px;
+
+        .container-my-cases{
+            margin: 0;
+            padding: 0 30px;
+        }
+
+        .title-wrapper{
+            margin-bottom: 20px;
+
+            h2{
+                font-size: 4.4rem;
+            }
+        }
+
+        .grid-cases-wrapper{
+            gap: 20px;
+
+            .case-box{
+                width: 260px;
+                height: 180px;
+            }
+        }
+
+        .button-wrapper{
+            margin: 35px auto 0 auto;
+            button.btn-open-modal-cases{
+                
+                span{
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1199px){
@@ -312,6 +614,69 @@ section.about-me{
                 }
             }
 
+        }
+    }
+
+    // My Cases
+    section.my-cases{
+        margin-top: 55px;
+
+        .container-my-cases{
+            padding: 0 25px;
+        }
+
+        .title-wrapper{
+            h2{
+                font-size: 4.2rem;
+            }
+        }
+
+        .grid-cases-wrapper{
+            .case-box{
+                width: 23%;
+                height: auto;
+                aspect-ratio: 3 / 2;
+                border-radius: 20px;
+
+                img.img-case{
+                    border-radius: 20px;
+                }
+            }
+        }
+
+        .button-wrapper{
+            margin: 28px auto 0 auto;
+        }
+    }
+
+    // Modal My Cases
+    .modal-my-cases{
+        .modal-wrapper{
+            .modal-container{
+                .modal-header{
+                    .title-wrapper{
+                        h2{
+                            font-size: 4.6rem;
+                        }
+                    }
+                }
+
+                .modal-content{
+                    ul.cases-list{
+                        column-gap: 90px;
+
+                        li{
+                            a.item{
+                                font-size: 3rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .modal-close-button-wrapper{
+                width: 72px;
+            }
         }
     }
 }
@@ -371,6 +736,79 @@ section.about-me{
                 p{
                     font-size: 2.1rem;
                     margin-bottom: 1em;
+                }
+            }
+        }
+    }
+
+    // My Cases
+    section.my-cases{
+        margin-top: 45px;
+
+        .title-wrapper{
+            h2{
+                font-size: 4rem;
+            }
+        }
+
+        .grid-cases-wrapper{
+            gap: 15px;
+
+            .case-box{
+                border-radius: 15px;
+
+                img.img-case{
+                    border-radius: 15px;
+                }
+            }
+        }
+
+        .button-wrapper{
+            margin: 18px auto 0 auto;
+            button.btn-open-modal-cases{
+                
+                span{
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+
+    // Modal My Cases
+    .modal-my-cases{
+        .modal-wrapper{
+            height: min(440px, 90vw);
+
+            .modal-container{
+                padding-top: 18px;
+                .modal-header{
+                    .title-wrapper{
+                        h2{
+                            font-size: 4.3rem;
+                        }
+                    }
+                }
+
+                .modal-content{
+                    ul.cases-list{
+                        column-gap: 20px;
+
+                        li{
+                            margin-bottom: 14px;
+                            a.item{
+                                font-size: 2.5rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .modal-close-button-wrapper{
+                width: 64px;
+                
+                svg{
+                    width: 36px;
+                    height: 36px;
                 }
             }
         }
@@ -452,6 +890,161 @@ section.about-me{
             }
         }
     }
+
+    // My Cases
+    section.my-cases{
+        // width: 100%;
+        // margin: 0 auto;
+        // margin-top: 45px;
+        // margin-bottom: 150px;
+        // max-width: 1440px;
+
+        .container-my-cases{
+            // display: flex;
+            // flex-direction: column;
+            // align-items: flex-end;
+            // width: min(1250px , 100%);
+            // margin: 0;
+            // padding: 0 25px;
+        }
+
+        .title-wrapper{
+            // width: fit-content;
+            // height: fit-content;
+            // margin-bottom: 20px;
+
+            h2{
+                font-size: 3.8rem;
+                // line-height: 1.2em;
+                // color: $font-highlight-color;
+                // font-style: italic;
+                // @extend %bold-font;
+            }
+        }
+
+        .grid-cases-wrapper{
+            // display: flex;
+            // flex-direction: row;
+            // flex-wrap: wrap;
+            // justify-content: center;
+            // gap: 15px;
+
+
+            .case-box{
+                width: 42%;
+                // height: auto;
+                // aspect-ratio: 3 / 2;
+                // border-radius: 15px;
+                // position: relative;
+                // overflow: hidden;
+
+                img.img-case{
+                    // width: 120%;
+                    // height: 120%;
+                    // object-fit: cover;
+                    // border-radius: 15px;
+                    // object-position: -15px -20px;
+                }
+
+                .layer-blur{
+                    // position: absolute;
+                    // left: 0;
+                    // top: 0;
+                    // width: 100%;
+                    // height: 100%;
+                    // background: rgba(0, 0, 0, 0.2);
+                    // z-index: 2;
+                    backdrop-filter: blur(0px);
+                    // transition: backdrop-filter .3s;
+                }
+
+                &:hover{
+                    .layer-blur{
+                        // backdrop-filter: blur(0px);
+                    }
+                }
+            }
+        }
+
+        .button-wrapper{
+            // width: fit-content;
+            // margin: 18px auto 0 auto;
+            button.btn-open-modal-cases{
+                // background: transparent;
+                // border: 0;
+                // padding: 10px 18px;
+                // position: relative;
+                // cursor: pointer;
+                
+                span{
+                    // font-size: 2.2rem;
+                    // line-height: 1.2em;
+                    // color: $font-highlight-color;
+                    // font-style: italic;
+                    // position: relative;
+                    // transition: .3s;
+                    // @extend %regular-font;
+                }
+
+                &::before{
+                    // display: block;
+                    // content: '';
+                    // width: 100%;
+                    // height: 4px;
+                    // background: $font-highlight-color;
+                    // position: absolute;
+                    // bottom: 0;
+                    // left: 0;
+                    // transition: .3s;
+                }
+
+                &:hover{
+                    span{
+                        // color: $white;
+                    }
+
+                    &::before{
+                        // height: 100%;
+                    }
+                }
+            }
+
+        }
+    }
+
+    // Modal My Cases
+    .modal-my-cases{
+        .modal-wrapper{
+            height: min(430px, 90vw);
+            border-radius: 35px;
+
+            .modal-container{
+                .modal-header{
+                    margin-bottom: 30px;
+                    .title-wrapper{
+                        h2{
+                            font-size: 3.6rem;
+                        }
+                    }
+                }
+
+                .modal-content{
+                    padding: 0px 40px;
+                    ul.cases-list{
+                        columns: unset;
+                        column-gap: 0px;
+                        margin-bottom: 30px;
+                        overflow-y: auto;
+                        height: 300px;
+
+                        li{
+                            width: fit-content;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -525,5 +1118,71 @@ section.about-me{
         }
     }
 
+    // My Cases
+    section.my-cases{
+        .title-wrapper{
+            h2{
+                font-size: 3.4rem;
+            }
+        }
+
+        .grid-cases-wrapper{
+            gap: 10px;
+
+            .case-box{
+                width: 48%;
+            }
+        }
+
+        .button-wrapper{
+            button.btn-open-modal-cases{
+                span{
+                    font-size: 2rem;
+                }
+            }
+
+        }
+    }
+
+    // Modal My Cases
+    .modal-my-cases{
+        .modal-wrapper{
+            height: 410px;
+            margin: 0 20px;
+            .modal-container{
+                .modal-header{
+                    .title-wrapper{
+                        h2{
+                            font-size: 3.1rem;
+                        }
+                    }
+                }
+
+                .modal-content{
+                    padding:0px 5px 0 20px;
+                    ul.cases-list{
+
+                        li{
+                            margin-bottom: 18px;
+                            a.item{
+                                font-size: 2.1rem;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .modal-close-button-wrapper{
+                width: 45px;
+
+                button.close-modal-btn{
+                    svg{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
 }
 
