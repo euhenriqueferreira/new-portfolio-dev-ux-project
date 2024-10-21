@@ -501,6 +501,64 @@ section.banners-lines{
     }
 }
 
+// Footer
+footer{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    margin-top: 80px;
+
+
+    .line-anchor-contacts-wrapper {
+        width: min(880px, 100%);
+        height: 70px;
+        border-radius: 10px;
+        background: $lightgray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        a.anchor-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: 100%;
+            padding: 0px 25px;
+            font-size: 2.4rem;
+            line-height: 1.2em;
+            color: #555;
+            @extend %regular-font;
+            transition: .3s;
+
+        }
+
+        a.anchor-item:hover{
+            color: #333;
+            text-decoration: underline;
+        }
+
+        .divisor{
+            width: 3px;
+            height: 40px;
+            background: #555;
+        }
+    }
+
+    .footer-logo-wrapper{
+        margin-top: 40px;
+        margin-bottom: 30px;
+
+        img{
+            width: 60px;
+        }
+    }
+    
+}
+
 /* --------------------------------------------- */ 
 /* --- Media Queries (Responsive Breakpoints --- */ 
 /* --------------------------------------------- */ 
@@ -721,6 +779,17 @@ section.banners-lines{
             }
         }
     }
+
+    // Footer
+    footer{
+        .line-anchor-contacts-wrapper {
+            height: 65px;
+            a.anchor-item{
+                font-size: 2.3rem;
+
+            }
+        }  
+    }
 }
 
 @media screen and (max-width: 991px){
@@ -868,6 +937,16 @@ section.banners-lines{
             }
         }
     }
+
+     // Footer
+     footer{
+        .line-anchor-contacts-wrapper {
+            a.anchor-item{
+                padding: 0px 21px;
+                font-size: 2.2rem;
+            }
+        }
+    }
 }
 
 
@@ -1010,6 +1089,29 @@ section.banners-lines{
                 width:min(540px, 100%);
             }
         }
+    }
+
+    // Footer
+    footer{
+
+        .line-anchor-contacts-wrapper {
+            height: 60px;
+            
+            a.anchor-item{
+                padding: 0px 15px;
+                font-size: 1.8rem;
+
+            }
+        }
+
+        .footer-logo-wrapper{
+            margin-top: 30px;
+
+            img{
+                width: 55px;
+            }
+        }
+        
     }
 }
 
@@ -1160,6 +1262,25 @@ section.banners-lines{
             img.img-banner{
                 min-height: 200px;
                 border-radius: 20px;
+            }
+        }
+    }
+
+    // Footer
+    footer{
+        .line-anchor-contacts-wrapper {
+            height: auto;
+            flex-direction: column;
+            gap: 15px 0;
+            padding: 15px 0;
+            
+            a.anchor-item{
+                width: 100%;
+                padding: 0px;
+            }
+
+            .divisor{
+                display: none;
             }
         }
     }
